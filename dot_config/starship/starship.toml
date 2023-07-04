@@ -1,0 +1,100 @@
+format = """
+[](red)\
+$username\
+[](bg:blue fg:red)\
+$directory\
+[](fg:blue bg:purple)\
+$git_branch\
+$git_status\
+[](fg:purple bg:blue)\
+$docker_context\
+$nodejs\
+$rust\
+$java\
+$python\
+$conda\
+[](fg:blue bg:red)\
+$time\
+[ ](fg:red)\
+"""
+palette = "moonbow"
+
+[palettes.moonbow]
+green = "#98971a"
+red = "#9d0006"
+purple = "#8f3f71"
+blue = "#076678"
+orange = "#d65d0e"
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:red"
+style_root = "bg:red"
+format = '[$user ]($style)'
+
+[directory]
+style = "bg:blue"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = ""
+style = "bg:purple"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:purple"
+format = '[($all_status$ahead_behind )]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:blue"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:purple"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"             # Hour:Minute Format
+style = "bg:red"
+format = '[  $time ]($style)'
+
+[java]
+symbol = ""
+style = "bg:blue"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:blue"
+format = '[ $symbol ($version) (\($virtualenv\) )]($style)'
+python_binary = ["./venv/bin/python3", "python", "python3", "python2"]
+
+[conda]
+style = "bg:blue"
+format = "[$symbol$environment ]($style)"
+
+[docker_context]
+style = "bg:blue"
+symbol = ""
+format = "[$symbol ($context) ]($style)"

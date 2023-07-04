@@ -1,0 +1,98 @@
+Metal
+http://0.0.0.0:8200/:clip/https://www.invisibleoranges.com/feed metal
+https://www.heavyblogisheavy.com/feed/ metal
+https://www.angrymetalguy.com/feed/ metal
+http://0.0.0.0:8200/:clip/https://cvltnation.com/feed/ metal
+https://www.nocleansinging.com/feed/ metal
+https://www.aristocraziawebzine.com/feed/ metal
+http://0.0.0.0:8200/:clip/https://metalskunk.com/feed/ metal ~Metalskunk
+https://contaminatedtones.blogspot.com/feeds/posts/default metal
+https://autothrall.blogspot.com/feeds/posts/default metal
+https://punkfoundations.blogspot.com/feeds/posts/default metal
+https://gonzokaraoke.wordpress.com/feed/ metal
+https://grizzlybutts.com/feed/ metal ~Grizzlybutts
+https://archeofuturismi.altervista.org/feed/ metal
+https://toiletovhell.com/feed/ metal
+http://0.0.0.0:8200/:clip/https://metalitalia.com/feed metal
+http://0.0.0.0:8200/:clip/https://www.metal-observer.com/3.o/feed/ metal
+https://www.blackmetalistkrieg.net/?feed=rss2 metal
+
+Jazz
+http://0.0.0.0:8200/:clip/https://avantmusicnews.com/feed/ jazz
+https://feeds.feedburner.com/blogspot/ozzV jazz
+http://0.0.0.0:8200/:clip/https://www.musicajazz.it/feed/ jazz
+http://0.0.0.0:8200/:clip/https://www.allaboutjazz.com/rss_reviews.xml jazz
+http://0.0.0.0:8200/:clip/https://www.allaboutjazz.com/rss_articles.xml jazz
+http://0.0.0.0:1200/pointofdeparture/content jazz
+
+Indie
+https://postgenre.org/feed/ "music misc"
+https://beatsperminute.com/feed/ "music misc"
+https://everythingisnoise.net/feed/ "music misc"
+https://indie-zone.it/feed/ "music misc"
+https://www.livore.it/feed/ "music misc"
+http://0.0.0.0:8200/:clip/https://thequietus.com/feed "music misc"
+https://burningambulance.com/feed/ "music misc"
+
+News
+http://0.0.0.0:8200/:clip/https://www.ilsole24ore.com/rss/italia.xml news
+http://0.0.0.0:8200/:clip/https://www.ilsole24ore.com/rss/mondo.xml news 
+http://0.0.0.0:8200/:clip/https://www.ilsole24ore.com/rss/economia.xml news
+https://www.valigiablu.it/feed/ news
+https://www.worksinprogress.co/feed/ news
+https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=science news
+https://www.science.org/action/showFeed?type=axatoc&feed=rss&jc=science news
+https://www.technologyreview.com/feed/ news
+https://anthrodendum.org/feed/ news
+https://www.iltascabile.com/feed/ news
+http://0.0.0.0:8200/:clip/http://effimera.org/feed/ news
+https://www.dinamopress.it/feed/ news
+https://www.che-fare.com/feed/ news
+http://0.0.0.0:8200/:clip/https://www.indiscreto.org/feed/ news
+https://www.quadernidaltrixtempi.eu/feed/ news
+https://not.neroeditions.com/feed/ news
+https://www.futurimagazine.it/feed/ news
+https://theintercept.com/feed/?rss news
+http://feeds.propublica.org/propublica/main news
+
+Cinema
+http://www.cinemad.iblamesociety.com/feeds/posts/default cinema
+https://canyoncinema.com/feed/ cinema
+
+Art
+https://www.1854.photography/feed/ art
+https://www.factmag.com/feed/ art
+http://0.0.0.0:8200/:clip/https://feeds.feedburner.com/Artribune art
+https://feeds.feedburner.com/hypebeast/feed art
+https://www.highsnobiety.com/feed/ art
+http://0.0.0.0:8200/:clip/https://www.labottegadelbarbieri.org/feed art
+
+IT
+http://arxiv.org/rss/cs.AI IT "~Arxiv Artificial Intelligence"
+http://arxiv.org/rss/cs.CL IT "~Arxiv Computation and Language"
+http://arxiv.org/rss/cs.CC IT "~Arxiv Computational Complexity"
+http://arxiv.org/rss/cs.CE IT "~Arxiv Computational Engineering, Finance, and Science"
+http://arxiv.org/rss/cs.GT IT "~Arxiv Computer Science and Game Theory"
+http://arxiv.org/rss/cs.CV IT "~Arxiv Computer Vision and Pattern Recognition"
+http://arxiv.org/rss/cs.ET IT "~Arxiv Emerging Technologies"
+http://arxiv.org/rss/cs.LO IT "~Arxiv Logic in Computer Science"
+http://arxiv.org/rss/cs.LG IT "~Arxiv Machine Learning"
+http://arxiv.org/rss/cs.NE IT "~Arxiv Neural and Evolutionary Computing"
+http://arxiv.org/rss/cs.PL IT "~Arxiv Programming Languages"
+http://arxiv.org/rss/cs.CY IT "~Arxiv Computers and Society"
+https://machinelearningmastery.com/feed/ IT
+https://itsfoss.com/feed/ IT
+https://hnrss.org/frontpage IT
+http://0.0.0.0:8200/:clip/https://www.phoronix.com/rss.php IT
+http://0.0.0.0:8200/:clip/https://feeds.arstechnica.com/arstechnica/index IT
+https://this-week-in-neovim.org/rss IT
+
+Lit
+https://www.wumingfoundation.com/giap/feed/ lit
+https://www.pangea.news/feed/ lit
+https://www.dissipatio.it/feed/ lit
+https://www.ilblast.it/feed/ lit
+
+Cooking
+http://0.0.0.0:8200/:clip/https://www.lacucinaitaliana.it/feed/rss cooking
+https://based.cooking/index.xml cooking

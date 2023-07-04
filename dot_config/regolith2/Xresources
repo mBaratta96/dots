@@ -1,0 +1,25 @@
+i3-wm.bar.position: top
+i3xrocks.value.font: SpaceMono Nerd Font Mono Regular 10
+i3-wm.gaps.smart: inverse_outer
+i3-wm.gaps.inner.size: 15
+i3-wm.bar.workspace.focused.background.color: #1F8EA8
+i3-wm.bar.workspace.focused.border.color: #1F8EA8
+i3-wm.bar.workspace.inactive.background.color: #C2BEB3
+i3-wm.bar.workspace.inactive.border.color: #C2BEB3
+gtk.icon_theme_name: everforest_light
+gtk.theme_name: oomox-nebula
+gtk.font_name:  Droid Sans Regular 10
+i3-wm.program.files: /usr/bin/x-terminal-emulator -e ranger
+regolith.wallpaper.file: /home/marco/Immagini/nebula.png
+regolith.wallpaper.options: scaled
+regolith.lockscreen.wallpaper.file: /home/marco/Immagini/nebula.png
+regolith.lockscreen.wallpaper.options: scaled
+i3-wm.window.border.size: 3
+i3-wm.client.unfocused.color.child_border: #232A2D
+i3-wm.client.focused.color.child_border: #B3B9B8
+i3-wm.bar.background.color: #0B1726
+i3-wm.program.music: spotify
+i3-wm.program.torrent: qbittorrent
+i3-wm.program.nvim: alacritty --config-file ~/.config/alacritty/alacritty_nvim.yml -e nvim
+i3-wm.program.ferdium: org.ferdium.Ferdium
+i3-wm.program.maim: maim ~/Immagini/frames/$(date +%s).png

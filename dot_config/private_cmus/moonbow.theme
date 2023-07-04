@@ -1,0 +1,52 @@
+# Default text color
+set color_win_fg=cyan
+
+# Overall background color
+set color_win_bg=default
+
+# Top title area
+set color_win_title_bg=red
+set color_win_title_fg=white
+
+# Separator line in view (1)
+set color_separator=red
+
+# Bottom title line
+set color_titleline_bg=red
+set color_titleline_fg=red  
+
+# Bottom status line
+set color_statusline_bg=default
+set color_statusline_fg=magenta
+
+# Command-line colors
+set color_cmdline_fg=white  
+set color_cmdline_bg=default
+set color_error=red
+set color_info=green  
+
+### Currently playing track ###
+# Unselected
+set color_win_cur=magenta
+
+# Active selection
+set color_win_cur_sel_bg=blue
+set color_win_cur_sel_fg=white
+
+# Inactive selection
+set color_win_inactive_cur_sel_bg=blue
+set color_win_inactive_cur_sel_fg=black
+
+### Non-playing track ###
+# Active selection
+set color_win_sel_bg=blue
+set color_win_sel_fg=white
+
+# Inactive selection
+set color_win_inactive_sel_bg=default
+set color_win_inactive_sel_fg=cyan
+
+### File browser view colors
+# Directoy listing color
+set color_win_dir=032
+

@@ -1,0 +1,24 @@
+destination:
+    border_color: blue
+    language:
+        apertium: English
+        argos: English
+        bing: English
+        chatgpt: English
+        deepl: English
+        google: English
+        reverso: English
+hide_below: false
+source:
+    border_color: red
+    language:
+        apertium: English
+        argos: English
+        bing: English
+        chatgpt: English
+        deepl: English
+        google: English
+        reverso: English
+theme: moonbow
+translator: Google
+transparent: false

@@ -1,0 +1,49 @@
+require("nvim-treesitter").setup()
+
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true,
+	},
+	compilers = { "g++", "gcc" },
+	indent = {
+		enable = true,
+	},
+	textobjects = {
+		select = {
+			enable = true,
+			lookahead = true,
+			keymaps = {
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+			},
+		},
+	},
+	ensure_installed = {
+		"css",
+		"help",
+		"javascript",
+		"json",
+		"lua",
+		"markdown",
+		"python",
+		"rust",
+		"typescript",
+		"vue",
+	},
+	rainbow = {
+		enable = true,
+		query = "rainbow-parens",
+		strategy = require("ts-rainbow").strategy.global,
+	},
+})
+
+require("nvim-treesitter.parsers").get_parser_configs().d2 = {
+	install_info = {
+		url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
+		revision = "main",
+		files = { "src/parser.c", "src/scanner.cc" },
+	},
+	filetype = "d2",
+}

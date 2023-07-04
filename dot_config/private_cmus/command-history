@@ -1,0 +1,16 @@
+set status_display_program=/home/marco/.config/cmus/status_display_program.sh
+set status_display_program=/usr/local/bin/cmus-notify
+set status_display_program=/home/user/.cmus/status_display_program.sh
+set status_display_program=cmusfm
+set status_display_program="~/.config/cmus/cmus-cover-art/observe.sh"
+colorscheme moonbow
+set continue=true
+unbind common left
+unbind common right
+unbind common right seek +5
+bind -f common left
+bind -f common right seek +5
+set continue_album=false
+set continue=false
+quit
+save

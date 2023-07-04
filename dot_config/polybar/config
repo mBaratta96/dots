@@ -1,0 +1,50 @@
+include-file = ~/.config/polybar/example_config.ini
+include-file = ~/.config/polybar/glyphs.ini
+include-file = ~/.config/polybar/components/battery.ini
+include-file = ~/.config/polybar/components/i3.ini
+include-file = ~/.config/polybar/components/network.ini
+include-file = ~/.config/polybar/components/spotify.ini
+include-file = ~/.config/polybar/components/weather.ini
+include-file = ~/.config/polybar/components/date.ini
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #232a2d
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+green = #8ccf7e
+black = #141b1e
+cyan = #6cbfbf
+
+[bar/mybar]
+;inherit = bar/main
+inherit = bar/example
+modules-left = i3
+fixed-center = true
+font-0 = "SpaceMono Nerd Font Mono:style=Regular:size=10"
+font-1 = "SpaceMono Nerd Font Mono:style=Regular:size=20;3"
+font-2 = "Weather Icons:style=Regular:size=10;1"
+modules-center = mydate spotify spotify-prev spotify-play-pause spotify-next
+
+background = ${colors.black}
+;modules-right = memory cpu right3 network right2 mybattery temperature right1 weather
+modules-right = memory cpu scrollnetwork downspeed mybattery temperature wicon weather wtemp
+module-margin-left = 1
+module-margin-right = 1
+enable-ipc = true
+
+
+;[module/mynetwork]
+;inherit = module/network
+;type = custom/script
+;exec = ~/.config/polybar/network-scroll.sh
+;tail = true
+;interval = 0
+;label-connected = ﬉ %output%%downspeed%
+
+

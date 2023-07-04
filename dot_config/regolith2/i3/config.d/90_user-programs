@@ -1,0 +1,22 @@
+exec --no-startup-id dunst
+# To use, define an Xresource key i3-wm.program.[1-3] with the value of the program to launch.
+# NOTE: this is included for legacy support.  In Regolith 2+, any program or other configuration can be added
+#       to $HOME/.config/regolith2/i3/config.d/
+set_from_resource $i3-wm.program.1 i3-wm.program.1 :
+exec --no-startup-id $i3-wm.program.1
+set_from_resource $i3-wm.program.2 i3-wm.program.2 :
+exec --no-startup-id $i3-wm.program.2
+set_from_resource $i3-wm.program.3 i3-wm.program.3 :
+exec --no-startup-id $i3-wm.program.3
+
+set_from_resource $i3-wm.program.music i3-wm.program.music
+set_from_resource $i3-wm.program.torrent i3-wm.program.torrent
+set_from_resource $i3-wm.program.nvim i3-wm.program.nvim
+set_from_resource $i3-wm.program.ferdium i3-wm.program.ferdium
+set_from_resource $i3-wm.program.maim i3-wm.program.maim
+
+bindsym $mod+Shift+m exec --no-startup-id $i3-wm.program.music
+bindsym $mod+Shift+d exec --no-startup-id $i3-wm.program.torrent
+bindsym $mod+Shift+v exec --no-startup-id $i3-wm.program.nvim
+bindsym $mod+Shift+f exec --no-startup-id $i3-wm.program.ferdium
+bindsym $mod+Print exec --no-startup-id $i3-wm.program.maim

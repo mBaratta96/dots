@@ -1,0 +1,24 @@
+# feed-sort-order lastupdated
+macro r set browser "readable %u | w3m -T text/html" ; open-in-browser ; set browser "firefox %u".
+download-full-page yes
+color listfocus_unread color17 blue bold
+max-items 100
+browser firefox %u
+text-width 120
+# styling
+# highlight feedlist "[║│]" default default bold
+highlight feedlist "╠═.*" default default bold
+feedlist-format "%?T?║ %n %9u %t &╠═>   %-8t═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════?"
+# unbind keys
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+unbind-key G
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key G end
