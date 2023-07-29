@@ -33,6 +33,7 @@ local function setLsp(lsp)
 			formatting.latexindent,
 			formatting.markdownlint.with({
 				filetypes = { "markdown", "telekasten", "fountain" },
+				args = { "-r", "~MD026" },
 			}),
 			formatting.phpcsfixer,
 			formatting.prettier.with({
@@ -58,6 +59,7 @@ local function setLsp(lsp)
 					"html",
 				},
 			}),
+			formatting.rubocop,
 			formatting.rustfmt,
 			formatting.styler,
 			formatting.stylua,

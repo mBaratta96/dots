@@ -24,6 +24,7 @@ map("n", "<leader>u", "gUU", options)
 map("n", "zo", "zO", options)
 map("n", "<leader>a", ":AerialToggle<CR>", options)
 map("n", "<leader>c", ":CodeActionMenu<CR>", options)
+map("n", "<leader>F", ":Frogmouth<CR>", options)
 
 local builtin = require("telescope.builtin")
 
@@ -68,3 +69,10 @@ command(
 	"set filetype=pandoc | Pandoc pdf --lua-filter /home/marco/.config/nvim/lua/confs/pandoc-filter.lua",
 	{ desc = "Parse into pdf" }
 )
+
+-- vim.api.nvim_create_autocmd("WinEnter", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.cmd("normal! zz")
+-- 	end,
+-- })

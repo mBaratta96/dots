@@ -1,7 +1,6 @@
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("ahmedkhalf/project.nvim")
-	use("anuvyklack/pretty-fold.nvim")
 	use("chrisbra/csv.vim")
 	use("ellisonleao/dotenv.nvim")
 	use("folke/twilight.nvim")
@@ -10,8 +9,8 @@ require("packer").startup(function(use)
 	use("kblin/vim-fountain")
 	use("lervag/vimtex")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("matbme/JABS.nvim")
 	use("HiPhish/nvim-ts-rainbow2")
+	use("matbme/JABS.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use("petertriho/nvim-scrollbar")
@@ -27,8 +26,23 @@ require("packer").startup(function(use)
 	use("wellle/targets.vim")
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
-	use({ "anuvyklack/fold-preview.nvim", requires = "anuvyklack/keymap-amend.nvim" })
 	use({ "arturgoms/moonbow.nvim" })
+	use({
+		"bennypowers/nvim-regexplainer",
+		config = function()
+			require("regexplainer").setup()
+		end,
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"MunifTanjim/nui.nvim",
+		},
+	})
+	use({
+		"folke/neodev.nvim",
+		config = function()
+			require("neodev").setup({})
+		end,
+	})
 	use({ "goolord/alpha-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
 	use({
 		"jcdickinson/wpm.nvim",
@@ -103,7 +117,6 @@ require("confs.bufferline")
 require("confs.colorizer")
 require("confs.dashboard")
 require("confs.d2")
-require("confs.fold")
 require("confs.jabs")
 require("confs.keys")
 require("confs.lsp-zero")

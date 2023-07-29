@@ -136,7 +136,7 @@ require("telekasten").setup({
 	rename_update_links = true,
 
 	vaults = {
-		notes = {
+		personal = {
 			-- alternate configuration for vault2 here. Missing values are defaulted to
 			-- default values from telekasten.
 			-- e.g.
@@ -147,6 +147,8 @@ require("telekasten").setup({
 			templates = vault_home .. "/" .. "templates",
 			template_new_note = vault_home .. "/" .. "templates/new_note.md",
 			template_handling = "smart",
+			dailies = vault_home .. "/" .. "daily",
+			weeklies = vault_home .. "/" .. "weekly",
 		},
 	},
 

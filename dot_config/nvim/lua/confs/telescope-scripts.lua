@@ -32,7 +32,7 @@ local filter_d2_lines = function()
 end
 
 local filetype = vim.bo.filetype
-vim.api.nvim_echo({ { vim.inspect(filetype) } }, true, {})
+--vim.api.nvim_echo({ { vim.inspect(filetype) } }, true, {})
 local results = filetype == "fountain" and filter_fountain_lines() or filetype == "d2" and filter_d2_lines() or {}
 
 local lines = function(opts)
@@ -46,18 +46,18 @@ local lines = function(opts)
 					return {
 						value = entry,
 						display = entry[2],
-						ordinal = entry[1],
+						ordinal = entry[2],
 					}
 				end,
 			}),
-			sorter = conf.generic_sorter(opts),
+			sorter = conf.file_sorter(opts),
 			attach_mappings = function(prompt_bufnr, map)
 				actions.select_default:replace(function()
 					actions.close(prompt_bufnr)
 					local selection = action_state.get_selected_entry()
 					--print(vim.inspect(selection))
 					if not (not selection or selection == "") then
-						vim.api.nvim_win_set_cursor(0, { selection.ordinal, 0 })
+						vim.api.nvim_win_set_cursor(0, { selection.value[1], 0 })
 						vim.cmd("normal! zz")
 					end
 				end)
