@@ -13,6 +13,7 @@ $rust\
 $java\
 $python\
 $conda\
+$golang\
 [](fg:blue bg:red)\
 $time\
 [ ](fg:red)\
@@ -71,6 +72,11 @@ format = '[ $symbol ($version) ]($style)'
 [rust]
 symbol = ""
 style = "bg:purple"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = "" 
+style = "bg:blue"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
