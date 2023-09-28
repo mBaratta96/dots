@@ -32,14 +32,10 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"vue",
 	},
-	rainbow = {
-		enable = true,
-		query = "rainbow-parens",
-		strategy = require("ts-rainbow").strategy.global,
-	},
 })
 
-require("nvim-treesitter.parsers").get_parser_configs().d2 = {
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.d2 = {
 	install_info = {
 		url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
 		revision = "main",

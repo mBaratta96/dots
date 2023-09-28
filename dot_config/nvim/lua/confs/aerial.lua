@@ -4,7 +4,7 @@ require("aerial").setup({
 		vim.keymap.set("n", "{", ":AerialPrev<CR>", { buffer = bufnr })
 		vim.keymap.set("n", "}", ":AerialNext<CR>", { buffer = bufnr })
 	end,
-	layout = { max_width = { 100, 0.4 }, min_width = 40, resize_to_content = true },
+	layout = { max_width = { 80, 0.4 }, min_width = 40, resize_to_content = true },
 	lazy_load = true,
 	backends = { "treesitter", "lsp", "markdown", "man" },
 })

@@ -57,6 +57,7 @@ local function setLsp(lsp)
 					"scss",
 					"less",
 					"html",
+					"svelte",
 				},
 			}),
 			formatting.rubocop,

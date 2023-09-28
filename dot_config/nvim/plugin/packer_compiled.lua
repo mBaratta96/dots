@@ -217,7 +217,7 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
-    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    config = { "\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
@@ -265,6 +265,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marco/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-ts-autotag"] = {
+    config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0" },
+    loaded = true,
+    path = "/home/marco/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-ts-rainbow2"] = {
     loaded = true,
@@ -390,26 +396,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: wpm.nvim
 time([[Config for wpm.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\bwpm\frequire\0", "config", "wpm.nvim")
 time([[Config for wpm.nvim]], false)
--- Config for: nvim-regexplainer
-time([[Config for nvim-regexplainer]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17regexplainer\frequire\0", "config", "nvim-regexplainer")
-time([[Config for nvim-regexplainer]], false)
 -- Config for: neodev.nvim
 time([[Config for neodev.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vneodev\frequire\0", "config", "neodev.nvim")
 time([[Config for neodev.nvim]], false)
+-- Config for: nvim-regexplainer
+time([[Config for nvim-regexplainer]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17regexplainer\frequire\0", "config", "nvim-regexplainer")
+time([[Config for nvim-regexplainer]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

@@ -9,7 +9,7 @@ require("packer").startup(function(use)
 	use("kblin/vim-fountain")
 	use("lervag/vimtex")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("HiPhish/nvim-ts-rainbow2")
+	use("HiPhish/rainbow-delimiters.nvim")
 	use("matbme/JABS.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-treesitter/nvim-treesitter-textobjects")
@@ -83,7 +83,13 @@ require("packer").startup(function(use)
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
-			require("nvim-autopairs").setup({})
+			require("nvim-autopairs").setup()
+		end,
+	})
+	use({
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
 		end,
 	})
 	use({
@@ -125,6 +131,7 @@ require("confs.navigator")
 require("confs.pandoc")
 require("confs.pencil")
 require("confs.projects")
+require("confs.rainbow")
 require("confs.scrollbar")
 require("confs.telekasten")
 require("confs.telescope")

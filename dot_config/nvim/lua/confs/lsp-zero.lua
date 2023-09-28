@@ -62,7 +62,10 @@ lspconfig.lua_ls.setup({
 	settings = { Lua = { format = { enable = false } } },
 })
 lspconfig.volar.setup({
-	formatting = { enable = false },
+	init_options = {
+		languageFeatures = { completion = { defaultTagNameCase = "kebabCase", defaultAttrNameCase = "kebebCase" } },
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
 
 -- SNIPPETS
@@ -110,5 +113,4 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		vim.diagnostic.open_float(nil, opts)
 	end,
 })
-
 -- CODE ACTIONS
