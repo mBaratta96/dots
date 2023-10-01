@@ -18,29 +18,13 @@ require("lazy").setup({
 	"stevearc/aerial.nvim",
 	"stevearc/overseer.nvim",
 	"terrastruct/d2-vim",
-	"tpope/vim-fugitive",
 	"tpope/vim-surround",
 	"uga-rosa/ccc.nvim",
 	"vim-pandoc/vim-rmarkdown",
 	"wellle/targets.vim",
-	"neovim/nvim-lspconfig",
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-nvim-lua",
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
-	"nvim-treesitter/nvim-treesitter",
 	"MunifTanjim/nui.nvim",
-	"nvimtools/none-ls.nvim",
 	"ray-x/guihua.lua",
-	"nvim-tree/nvim-web-devicons",
-	"nvim-lua/plenary.nvim",
-	{ "akinsho/bufferline.nvim", version = "*", dependecies = "nvim-tree/nvim-web-devicons" },
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "akinsho/toggleterm.nvim", version = "*" },
 	{
 		"arturgoms/moonbow.nvim",
@@ -53,7 +37,7 @@ require("lazy").setup({
 		config = function()
 			require("regexplainer").setup()
 		end,
-		dependecies = {
+		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"MunifTanjim/nui.nvim",
 		},
@@ -64,7 +48,7 @@ require("lazy").setup({
 			require("neodev").setup({})
 		end,
 	},
-	{ "goolord/alpha-nvim", dependecies = { "nvim-tree/nvim-web-devicons" } },
+	{ "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"jcdickinson/wpm.nvim",
 		config = function()
@@ -73,29 +57,29 @@ require("lazy").setup({
 	},
 	{
 		"ray-x/navigator.lua",
-		dependecies = {
-			{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+		dependencies = {
+			{ "ray-x/guihua.lua", build = "cd lua/fzy && make" },
 			{ "neovim/nvim-lspconfig" },
 		},
 	},
-	{ "rbong/vim-flog", dependecies = { "tpope/vim-fugitive" } },
+	{ "rbong/vim-flog", dependencies = { "tpope/vim-fugitive" } },
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
 	},
-	{ "nvim-lualine/lualine.nvim", dependecies = { "kyazdani42/nvim-web-devicons" } },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependecies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependecies = { { "nvim-lua/plenary.nvim" } } },
-	{ "nvim-tree/nvim-tree.lua", dependecies = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { { "nvim-lua/plenary.nvim" } } },
+	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"vim-pandoc/vim-pandoc",
-		dependecies = { "vim-pandoc/vim-pandoc-syntax" },
+		dependencies = { "vim-pandoc/vim-pandoc-syntax" },
 	},
 	{
 		"weilbith/nvim-code-action-menu",
@@ -108,7 +92,7 @@ require("lazy").setup({
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
-		dependecies = {
+		dependencies = {
 			-- LSP Support
 			"neovim/nvim-lspconfig",
 			"williamboman/mason.nvim",
