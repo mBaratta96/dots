@@ -22,7 +22,6 @@ require("nvim-treesitter.configs").setup({
 	},
 	ensure_installed = {
 		"css",
-		"help",
 		"javascript",
 		"json",
 		"lua",
@@ -31,6 +30,8 @@ require("nvim-treesitter.configs").setup({
 		"rust",
 		"typescript",
 		"vue",
+		"html",
+		"tsx",
 	},
 })
 

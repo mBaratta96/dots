@@ -1,120 +1,133 @@
-require("packer").startup(function(use)
-	use("wbthomason/packer.nvim")
-	use("ahmedkhalf/project.nvim")
-	use("chrisbra/csv.vim")
-	use("ellisonleao/dotenv.nvim")
-	use("folke/twilight.nvim")
-	use("folke/which-key.nvim")
-	use("jalvesaq/Nvim-R")
-	use("kblin/vim-fountain")
-	use("lervag/vimtex")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("HiPhish/rainbow-delimiters.nvim")
-	use("matbme/JABS.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
-	use("nvim-treesitter/nvim-treesitter-textobjects")
-	use("petertriho/nvim-scrollbar")
-	use("preservim/vim-pencil")
-	use("renerocksai/telekasten.nvim")
-	use("stevearc/aerial.nvim")
-	use("stevearc/overseer.nvim")
-	use("terrastruct/d2-vim")
-	use("tpope/vim-fugitive")
-	use("tpope/vim-surround")
-	use("uga-rosa/ccc.nvim")
-	use("vim-pandoc/vim-rmarkdown")
-	use("wellle/targets.vim")
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
-	use({ "akinsho/toggleterm.nvim", tag = "*" })
-	use({ "arturgoms/moonbow.nvim" })
-	use({
+require("lazy").setup({
+	"ahmedkhalf/project.nvim",
+	"chrisbra/csv.vim",
+	"ellisonleao/dotenv.nvim",
+	"folke/twilight.nvim",
+	"folke/which-key.nvim",
+	"jalvesaq/Nvim-R",
+	"kblin/vim-fountain",
+	"lervag/vimtex",
+	"lukas-reineke/indent-blankline.nvim",
+	"HiPhish/rainbow-delimiters.nvim",
+	"matbme/JABS.nvim",
+	"nvim-telescope/telescope-media-files.nvim",
+	"nvim-treesitter/nvim-treesitter-textobjects",
+	"petertriho/nvim-scrollbar",
+	"preservim/vim-pencil",
+	"renerocksai/telekasten.nvim",
+	"stevearc/aerial.nvim",
+	"stevearc/overseer.nvim",
+	"terrastruct/d2-vim",
+	"tpope/vim-fugitive",
+	"tpope/vim-surround",
+	"uga-rosa/ccc.nvim",
+	"vim-pandoc/vim-rmarkdown",
+	"wellle/targets.vim",
+	"neovim/nvim-lspconfig",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"saadparwaiz1/cmp_luasnip",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-nvim-lua",
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
+	"nvim-treesitter/nvim-treesitter",
+	"MunifTanjim/nui.nvim",
+	"nvimtools/none-ls.nvim",
+	"ray-x/guihua.lua",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lua/plenary.nvim",
+	{ "akinsho/bufferline.nvim", version = "*", dependecies = "nvim-tree/nvim-web-devicons" },
+	{ "akinsho/toggleterm.nvim", version = "*" },
+	{
+		"arturgoms/moonbow.nvim",
+		config = function()
+			vim.cmd("colorscheme moonbow")
+		end,
+	},
+	{
 		"bennypowers/nvim-regexplainer",
 		config = function()
 			require("regexplainer").setup()
 		end,
-		requires = {
+		dependecies = {
 			"nvim-treesitter/nvim-treesitter",
 			"MunifTanjim/nui.nvim",
 		},
-	})
-	use({
+	},
+	{
 		"folke/neodev.nvim",
 		config = function()
 			require("neodev").setup({})
 		end,
-	})
-	use({ "goolord/alpha-nvim", requires = { "nvim-tree/nvim-web-devicons" } })
-	use({
+	},
+	{ "goolord/alpha-nvim", dependecies = { "nvim-tree/nvim-web-devicons" } },
+	{
 		"jcdickinson/wpm.nvim",
 		config = function()
 			require("wpm").setup({})
 		end,
-	})
-	use({
+	},
+	{
 		"ray-x/navigator.lua",
-		requires = {
+		dependecies = {
 			{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
 			{ "neovim/nvim-lspconfig" },
 		},
-	})
-	use({ "rbong/vim-flog", requires = { "tpope/vim-fugitive" } })
-	use({
+	},
+	{ "rbong/vim-flog", dependecies = { "tpope/vim-fugitive" } },
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
-	})
-	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-	use({
+	},
+	{ "nvim-lualine/lualine.nvim", dependecies = { "kyazdani42/nvim-web-devicons" } },
+	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	})
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { { "nvim-lua/plenary.nvim" } } })
-	use({ "nvim-tree/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" } })
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use({
+		dependecies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
+	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependecies = { { "nvim-lua/plenary.nvim" } } },
+	{ "nvim-tree/nvim-tree.lua", dependecies = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{
 		"vim-pandoc/vim-pandoc",
-		requires = { "vim-pandoc/vim-pandoc-syntax" },
-	})
-	use({
+		dependecies = { "vim-pandoc/vim-pandoc-syntax" },
+	},
+	{
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
-	})
-	use({
+	},
+	{
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
-	})
-	use({
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	})
-	use({
+		event = "InsertEnter",
+	},
+	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
-		requires = {
+		dependecies = {
 			-- LSP Support
-			{ "neovim/nvim-lspconfig" },
-			{ "williamboman/mason.nvim" },
-			{ "williamboman/mason-lspconfig.nvim" },
+			"neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-nvim-lua" },
+			"hrsh7th/nvim-cmp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
 			-- Snippets
-			{ "L3MON4D3/LuaSnip" },
-			{ "rafamadriz/friendly-snippets" },
+			"L3MON4D3/LuaSnip",
+			"rafamadriz/friendly-snippets",
 			-- Formatter
-			{ "jose-elias-alvarez/null-ls.nvim" },
+			"nvimtools/none-ls.nvim",
 		},
-	})
-end)
+	},
+})
 
 require("confs.aerial")
 require("confs.autopairs")

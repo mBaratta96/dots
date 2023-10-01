@@ -48,6 +48,5 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 --
 --vim.cmd("filetype indent off")
 --vim.cmd('colorscheme everblush')
-vim.cmd("colorscheme moonbow")
 
 vim.g.tex_flavor = "latex"
