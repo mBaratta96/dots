@@ -1,0 +1,36 @@
+return {
+	"uga-rosa/ccc.nvim",
+	ft = { "css", "scss", "python" },
+	opts = function()
+		local ccc = require("ccc")
+		return {
+			pickers = {
+				ccc.picker.hex,
+				ccc.picker.css_rgb,
+				ccc.picker.css_hsl,
+				ccc.picker.css_hwb,
+				ccc.picker.css_lab,
+				ccc.picker.css_lch,
+				ccc.picker.css_oklab,
+				ccc.picker.css_oklch,
+				ccc.picker.css_name,
+			},
+			highlighter = {
+				auto_enable = true,
+				lsp = true,
+				excludes = {
+					"csv",
+					"toggleterm",
+					"markdown",
+					"text",
+					"tex",
+					"fountain",
+					"mason",
+					"NvimTree",
+					"telekasten",
+					"pandoc",
+				},
+			},
+		}
+	end,
+}

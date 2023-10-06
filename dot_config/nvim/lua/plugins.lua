@@ -1,139 +1,42 @@
-require("lazy").setup({
-	"ahmedkhalf/project.nvim",
-	"chrisbra/csv.vim",
-	"ellisonleao/dotenv.nvim",
-	"folke/twilight.nvim",
-	"folke/which-key.nvim",
-	"jalvesaq/Nvim-R",
-	"kblin/vim-fountain",
-	"lervag/vimtex",
-	"lukas-reineke/indent-blankline.nvim",
-	"HiPhish/rainbow-delimiters.nvim",
-	"matbme/JABS.nvim",
-	"nvim-telescope/telescope-media-files.nvim",
-	"nvim-treesitter/nvim-treesitter-textobjects",
-	"petertriho/nvim-scrollbar",
-	"preservim/vim-pencil",
-	"renerocksai/telekasten.nvim",
-	"stevearc/aerial.nvim",
-	"stevearc/overseer.nvim",
-	"terrastruct/d2-vim",
-	"tpope/vim-surround",
-	"uga-rosa/ccc.nvim",
-	"vim-pandoc/vim-rmarkdown",
-	"wellle/targets.vim",
-	"MunifTanjim/nui.nvim",
-	"ray-x/guihua.lua",
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-	{ "akinsho/toggleterm.nvim", version = "*" },
+return {
+	{ "chrisbra/csv.vim", ft = "csv" },
+	{ "jalvesaq/Nvim-R", ft = { "r", "rmd" } },
+	{ "kblin/vim-fountain", ft = { "fountain" } },
+	{ "vim-pandoc/vim-rmarkdown", ft = "rmd" },
+	{ "wellle/targets.vim", event = "BufRead" },
+	{
+		"petertriho/nvim-scrollbar",
+		event = "BufRead",
+		opts = {},
+	},
 	{
 		"arturgoms/moonbow.nvim",
 		config = function()
 			vim.cmd("colorscheme moonbow")
 		end,
+		lazy = false,
 	},
-	{
-		"bennypowers/nvim-regexplainer",
-		config = function()
-			require("regexplainer").setup()
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
-		"folke/neodev.nvim",
-		config = function()
-			require("neodev").setup({})
-		end,
-	},
-	{ "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"jcdickinson/wpm.nvim",
-		config = function()
-			require("wpm").setup({})
-		end,
 	},
+	{ "rbong/vim-flog", dependencies = { "tpope/vim-fugitive" }, cmd = "Flog" },
 	{
-		"ray-x/navigator.lua",
-		dependencies = {
-			{ "ray-x/guihua.lua", build = "cd lua/fzy && make" },
-			{ "neovim/nvim-lspconfig" },
-		},
+		"tpope/vim-fugitive",
+		config = function()
+			local command = vim.api.nvim_create_user_command
+			command("Gcoa", "Git coa <args>", { nargs = 1 })
+			command("Gcheck", "Git checkout <args>", { nargs = 1 })
+			command("Gpushbranch", "Git push --set-upstream origin <args>", { nargs = 1 })
+		end,
+		cmd = { "Gcoa", "Gcheck", "Gpushbranch", "G" },
 	},
-	{ "rbong/vim-flog", dependencies = { "tpope/vim-fugitive" } },
 	{
 		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	},
-	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { { "nvim-lua/plenary.nvim" } } },
-	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{
-		"vim-pandoc/vim-pandoc",
-		dependencies = { "vim-pandoc/vim-pandoc-syntax" },
+		event = "BufRead",
+		opts = {},
 	},
 	{
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
 	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-	},
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
-		dependencies = {
-			-- LSP Support
-			"neovim/nvim-lspconfig",
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			-- Autocompletion
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
-			-- Snippets
-			"L3MON4D3/LuaSnip",
-			"rafamadriz/friendly-snippets",
-			-- Formatter
-			"nvimtools/none-ls.nvim",
-		},
-	},
-})
-
-require("confs.aerial")
-require("confs.autopairs")
-require("confs.blankline")
-require("confs.bufferline")
-require("confs.colorizer")
-require("confs.dashboard")
-require("confs.d2")
-require("confs.jabs")
-require("confs.keys")
-require("confs.lsp-zero")
-require("confs.lualine")
-require("confs.navigator")
-require("confs.pandoc")
-require("confs.pencil")
-require("confs.projects")
-require("confs.rainbow")
-require("confs.scrollbar")
-require("confs.telekasten")
-require("confs.telescope")
-require("confs.toggleterm")
-require("confs.tree")
-require("confs.treesitter")
-require("confs.twilight")
-require("confs.vimtex")
+}
