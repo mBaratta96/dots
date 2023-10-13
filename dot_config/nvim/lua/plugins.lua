@@ -1,14 +1,4 @@
 return {
-	{ "chrisbra/csv.vim", ft = "csv" },
-	{ "jalvesaq/Nvim-R", ft = { "r", "rmd" } },
-	{ "kblin/vim-fountain", ft = { "fountain" } },
-	{ "vim-pandoc/vim-rmarkdown", ft = "rmd" },
-	{ "wellle/targets.vim", event = "BufRead" },
-	{
-		"petertriho/nvim-scrollbar",
-		event = "BufRead",
-		opts = {},
-	},
 	{
 		"arturgoms/moonbow.nvim",
 		config = function()
@@ -16,8 +6,27 @@ return {
 		end,
 		lazy = false,
 	},
+	{ "chrisbra/csv.vim", ft = "csv" },
+	{ "jalvesaq/Nvim-R", ft = { "r", "rmd" } },
+	{ "jcdickinson/wpm.nvim" },
+	{ "kblin/vim-fountain", ft = { "fountain" } },
 	{
-		"jcdickinson/wpm.nvim",
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
+		opts = { sign_priority = 100 },
+		init = function()
+			vim.opt.signcolumn = "yes:2"
+		end,
+	},
+	{
+		"numToStr/Comment.nvim",
+		event = "BufRead",
+		opts = {},
+	},
+	{
+		"petertriho/nvim-scrollbar",
+		event = "BufRead",
+		opts = {},
 	},
 	{ "rbong/vim-flog", dependencies = { "tpope/vim-fugitive" }, cmd = "Flog" },
 	{
@@ -30,11 +39,9 @@ return {
 		end,
 		cmd = { "Gcoa", "Gcheck", "Gpushbranch", "G" },
 	},
-	{
-		"numToStr/Comment.nvim",
-		event = "BufRead",
-		opts = {},
-	},
+
+	{ "vim-pandoc/vim-rmarkdown", ft = "rmd" },
+	{ "wellle/targets.vim", event = "BufRead" },
 	{
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
