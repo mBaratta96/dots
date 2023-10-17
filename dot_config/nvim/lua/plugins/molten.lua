@@ -33,6 +33,14 @@ return {
 				"! $HOME/.config/nvim/jupyter_init.sh <args>",
 				{ desc = "Init Jupiter kernel with name", nargs = 1 }
 			)
+			vim.api.nvim_create_user_command("JupyterConvert", function()
+				if vim.bo.filetype ~= "quarto" then
+					return
+				end
+				local path = vim.fn.expand("%:p")
+				local notebook_path = string.sub(path, 1, -4) .. "ipynb"
+				vim.cmd("! quarto convert " .. path .. " -o " .. notebook_path)
+			end, { desc = "Convert from Quarto notebook to Jupyter notebook" })
 		end,
 	},
 	{
