@@ -5,7 +5,6 @@ return {
 			"3rd/image.nvim",
 			"quarto-dev/quarto-nvim",
 			"jmbuhr/otter.nvim",
-			--"goerz/jupytext.vim",
 			"hrsh7th/nvim-cmp",
 			"neovim/nvim-lspconfig",
 			"nvim-treesitter/nvim-treesitter",

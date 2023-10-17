@@ -68,7 +68,6 @@ local function setLsp(lsp)
 				extra_args = { "--blanks", "true", "--compress", "false" },
 			}),
 			formatting.zprint,
-			--diagnostics.golangci_lint,
 			diagnostics.jsonlint,
 			diagnostics.flake8.with({
 				extra_args = { "--max-line-length", "120", "--extend-ignore", "E203" },
