@@ -7,6 +7,7 @@ return {
 			-- Disable automatic setup, we are doing it manually
 			vim.g.lsp_zero_extend_cmp = 0
 			vim.g.lsp_zero_extend_lspconfig = 0
+			vim.o.updatetime = 250
 		end,
 	},
 	{
@@ -31,12 +32,26 @@ return {
 			null_ls.setLsp(lsp_zero)
 
 			local lsp_confs = require("confs.lspconfig")
-			lsp_confs.sign_columns()
+			--lsp_confs.sign_columns()
 			lsp_zero.on_attach(function(client, bufnr)
 				-- see :help lsp-zero-keybindings
 				-- to learn the available actions
 				lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
 				require("navigator.lspclient.mapping").setup({ bufnr = bufnr, client = client })
+				vim.api.nvim_create_autocmd("CursorHold", {
+					buffer = bufnr,
+					callback = function()
+						local opts = {
+							focusable = false,
+							close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+							border = "rounded",
+							source = "always",
+							prefix = " ",
+							scope = "cursor",
+						}
+						vim.diagnostic.open_float(nil, opts)
+					end,
+				})
 			end)
 			require("mason").setup({})
 			require("mason-lspconfig").setup({

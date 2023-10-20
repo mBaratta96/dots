@@ -1,5 +1,6 @@
 return {
-	"nvim-treesitter/nvim-treesitter-textobjects",
+	{ "nvim-treesitter/nvim-treesitter-textobjects", event = "InsertEnter" },
+	{ "windwp/nvim-ts-autotag", ft = { "html", "xml", "typescriptreact", "javascriptreact", "vue" } },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -15,6 +16,9 @@ return {
 					enable = true,
 				},
 				autopairs = {
+					enable = true,
+				},
+				autotag = {
 					enable = true,
 				},
 				textobjects = {

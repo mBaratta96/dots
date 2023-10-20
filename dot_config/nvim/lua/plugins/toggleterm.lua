@@ -5,7 +5,7 @@ return {
 		direction = "horizontal",
 		shade_terminals = false,
 		size = 25,
-		open_mapping = [[<c-\>]],
+		open_mapping = [[<c-t>]],
 		autochdir = true,
 	},
 	event = "BufRead",
