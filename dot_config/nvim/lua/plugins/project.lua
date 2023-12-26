@@ -16,6 +16,7 @@ return {
 			"pom.xml",
 		},
 		detection_methods = { "patterns", "lsp" },
+		show_hidden = false,
 	},
 	config = function(_, opts)
 		require("project_nvim").setup(opts)

@@ -6,6 +6,12 @@ return {
 		end,
 		lazy = false,
 	},
+	{
+		"m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+		opts = {},
+		event = "BufRead",
+	},
 	{ "chrisbra/csv.vim", ft = "csv" },
 	{ "jalvesaq/Nvim-R", ft = { "r", "rmd" } },
 	{ "jcdickinson/wpm.nvim" },

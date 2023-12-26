@@ -22,12 +22,6 @@ return {
 						yaml = true,
 					},
 				},
-				extensions = {
-					fzy_native = {
-						override_generic_sorter = false,
-						override_file_sorter = true,
-					},
-				},
 			},
 		},
 		config = function(_, opts)
@@ -37,9 +31,12 @@ return {
 			require("telescope").load_extension("aerial")
 			require("telescope").load_extension("fzy_native")
 			local builtin = require("telescope.builtin")
+			local utils = require("telescope.utils")
 			local map = vim.keymap.set
 			map("n", "<leader>ff", builtin.find_files, options)
-			map("n", "<leader>fg", builtin.live_grep, options)
+			map("n", "<leader>fg", function()
+				builtin.live_grep({ cwd = utils.buffer_dir() })
+			end, options)
 			map("n", "<leader>fb", builtin.buffers, options)
 			map("n", "<leader>fh", builtin.help_tags, options)
 			map("n", "<leader>ft", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", options)
@@ -48,6 +45,7 @@ return {
 			end, options)
 			map("n", "<leader>fs", ":luafile $HOME/.config/nvim/lua/confs/telescope-scripts.lua<CR>")
 			map("n", "<leader>fa", ":Telescope aerial<CR>")
+			map("n", "<leader>f/", builtin.search_history, options)
 			require("telescope").setup(opts)
 		end,
 		lazy = false,

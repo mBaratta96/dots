@@ -1,5 +1,6 @@
 {
     "scenes_numbers": "left",
+    "show_page_numbers": true,
     "embolden_scene_headers": true,
     "print_title_page": false
 }

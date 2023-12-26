@@ -1,6 +1,6 @@
 return {
 	"uga-rosa/ccc.nvim",
-	ft = { "css", "scss", "python" },
+	cmd = "CccHighlighterToggle",
 	opts = function()
 		local ccc = require("ccc")
 		return {
