@@ -45,7 +45,6 @@ return {
 		end,
 		cmd = { "Gcoa", "Gcheck", "Gpushbranch", "G" },
 	},
-
 	{ "vim-pandoc/vim-rmarkdown", ft = "rmd" },
 	{ "wellle/targets.vim", event = "BufRead" },
 	{

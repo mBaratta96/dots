@@ -1,13 +1,11 @@
 return {
 	"preservim/vim-pencil",
 	ft = { "markdown", "pandoc", "fountain" },
-	init = function()
+	config = function()
 		vim.g["pencil#autoformat"] = 1
 		vim.g["pencil#textwidth"] = 120
-	end,
-	config = function()
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "markdown", "mkd", "text", "fountain" },
+		vim.api.nvim_create_autocmd("BufEnter", {
+			pattern = { "*.md", "*.txt", "*.fountain" },
 			callback = function()
 				local path = vim.fn.expand("%:p")
 				if string.find(path, "requirements.txt") then
