@@ -1,0 +1,25 @@
+wm.bar.position: top
+i3xrocks.value.font: SpaceMono Nerd Font Mono Regular 10
+wm.gaps.smart: inverse_outer
+wm.gaps.inner.size: 15
+wm.bar.workspace.focused.background.color: #1F8EA8
+wm.bar.workspace.focused.border.color: #1F8EA8
+wm.bar.workspace.inactive.background.color: #C2BEB3
+wm.bar.workspace.inactive.border.color: #C2BEB3
+gtk.icon_theme_name: everforest_light
+gtk.theme_name: oomox-nebula
+gtk.font_name:  Droid Sans Regular 10
+wm.program.files: /usr/bin/x-terminal-emulator -e ranger
+regolith.wallpaper.file: /home/marco/Immagini/ming-america.jpg
+regolith.wallpaper.options: scaled
+regolith.lockscreen.wallpaper.file: /home/marco/Immagini/ming-america.jpg
+regolith.lockscreen.wallpaper.options: scaled
+wm.window.border.size: 3
+wm.client.unfocused.color.child_border: #232A2D
+wm.client.focused.color.child_border: #B3B1AD
+wm.bar.background.color: #0B1726
+wm.program.music: spotify
+wm.program.torrent: qbittorrent
+wm.program.nvim: alacritty --config-file ~/.config/alacritty/alacritty_nvim.yml -e nvim
+wm.program.chat: ferdium
+wm.program.maim: maim ~/Immagini/frames/$(date +%s).png
