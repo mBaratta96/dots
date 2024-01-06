@@ -20,6 +20,6 @@ wm.client.focused.color.child_border: #B3B1AD
 wm.bar.background.color: #0B1726
 wm.program.music: spotify
 wm.program.torrent: qbittorrent
-wm.program.nvim: alacritty --config-file ~/.config/alacritty/alacritty_nvim.yml -e nvim
+wm.program.nvim: alacritty --config-file ~/.config/alacritty/alacritty_nvim.toml -e nvim
 wm.program.chat: ferdium
 wm.program.maim: maim ~/Immagini/frames/$(date +%s).png
