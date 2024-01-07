@@ -30,6 +30,7 @@ return {
 			require("telescope").load_extension("file_browser")
 			require("telescope").load_extension("aerial")
 			require("telescope").load_extension("fzy_native")
+			require("telescope").load_extension("notify")
 			local builtin = require("telescope.builtin")
 			local utils = require("telescope.utils")
 			local map = vim.keymap.set
@@ -45,7 +46,9 @@ return {
 			end, options)
 			map("n", "<leader>fs", ":luafile $HOME/.config/nvim/lua/confs/telescope-scripts.lua<CR>")
 			map("n", "<leader>fa", ":Telescope aerial<CR>")
+			map("n", "<leader>fn", ":Telescope notify<CR>")
 			map("n", "<leader>f/", builtin.search_history, options)
+			map("n", "<leader>fp", ":Telescope projects<CR>", options)
 			require("telescope").setup(opts)
 		end,
 		lazy = false,

@@ -53,6 +53,7 @@ return {
 					end,
 				})
 			end)
+			vim.keymap.set("n", "<leader>m", ":Mason<CR>", { noremap = true })
 			require("mason").setup({})
 			require("mason-lspconfig").setup({
 				ensure_installed = { "tsserver", "rust_analyzer" },
@@ -74,6 +75,7 @@ return {
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
+			{ "SergioRibera/cmp-dotenv" },
 		},
 		config = function()
 			-- SNIPPETS
@@ -90,6 +92,7 @@ return {
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "dotenv" },
 				},
 				mapping = {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),

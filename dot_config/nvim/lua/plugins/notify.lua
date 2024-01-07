@@ -11,7 +11,7 @@ return {
 	"rcarriga/nvim-notify",
 	config = function()
 		vim.notify = require("notify")
-		require("notify").setup({ render = "wrapped-compact" })
+		require("notify").setup({ render = "wrapped-compact", top_down = false })
 		local today = os.date("%Y-%m-%d")
 		local path = "/home/marco/Documenti/projects/personal/daily/" .. today .. ".md"
 		if not file_exists(path) then

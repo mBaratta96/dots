@@ -1,6 +1,6 @@
-vim.keymap.set("n", "<leader>a", ":AerialToggle<CR>", { noremap = true })
 return {
 	"stevearc/aerial.nvim",
+	keys = { { "<leader>a", ":AerialToggle<CR>", { desc = "Toggle Aerial" } } },
 	opts = {
 		on_attach = function(bufnr)
 			-- Jump forwards/backwards with '{' and '}'

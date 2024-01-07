@@ -6,6 +6,7 @@ return {
 		},
 	},
 	config = function(_, opts)
+		vim.keymap.set("n", "<leader>ot", ":OverseerToggle<CR>", { noremap = true })
 		vim.api.nvim_create_user_command(
 			"D2",
 			"OverseerRunCmd d2 -w --layout=elk -p 4300 --dark-theme 200 % out.svg",
