@@ -15,16 +15,17 @@ return {
 		event = "BufRead",
 		opts = {},
 	},
-	{
-		"petertriho/nvim-scrollbar",
-		event = "BufRead",
-		opts = {},
-	},
 	{ "rbong/vim-flog", dependencies = { "tpope/vim-fugitive" }, cmd = "Flog" },
 	{ "vim-pandoc/vim-rmarkdown", ft = "rmd" },
 	{ "wellle/targets.vim", event = "BufRead" },
 	{
 		"weilbith/nvim-code-action-menu",
 		keys = { { "<leader>c", ":CodeActionMenu<CR>", { desc = "Open code action" } } },
+	},
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		opts = {},
+		ft = { "markdown", "pandoc", "telekasten" },
 	},
 }

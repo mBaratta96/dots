@@ -11,7 +11,11 @@ return {
 				if string.find(path, "requirements.txt") then
 					return
 				end
-				if string.find(path, ".fountain") or string.find(path, "/home/marco/Documenti/projects/notes/") then
+				if
+					string.find(path, ".fountain")
+					or string.find(path, "/home/marco/Documenti/projects/notes/")
+					or string.find(path, "/home/marco/Documenti/reviews")
+				then
 					vim.api.nvim_command("PencilSoft")
 					return
 				end

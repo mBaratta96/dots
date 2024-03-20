@@ -9,15 +9,25 @@ return {
 			"neovim/nvim-lspconfig",
 			"nvim-treesitter/nvim-treesitter",
 		},
-		ft = "qmd",
+		ft = { "qmd", "markdown", "ipynb" },
 		build = ":UpdateRemotePlugins",
+		version = "^1.0.0",
 		init = function()
 			-- these are examples, not defaults. Please see the readme
 			vim.g.molten_image_provider = "image.nvim"
 			vim.g.molten_output_win_max_height = 20
 			vim.g.molten_auto_open_output = false
 			vim.g.molten_show_mimetype_debug = true
-			require("confs.quarto_code_runner").attach_run_mappings()
+			--require("confs.quarto_code_runner").attach_run_mappings()
+			local runner = require("quarto.runner")
+			vim.keymap.set("n", "<localleader>rc", runner.run_cell, { desc = "run cell", silent = true })
+			vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "run cell and above", silent = true })
+			vim.keymap.set("n", "<localleader>rA", runner.run_all, { desc = "run all cells", silent = true })
+			vim.keymap.set("n", "<localleader>rl", runner.run_line, { desc = "run line", silent = true })
+			vim.keymap.set("v", "<localleader>r", runner.run_range, { desc = "run visual range", silent = true })
+			vim.keymap.set("n", "<localleader>RA", function()
+				runner.run_all(true)
+			end, { desc = "run all cells of all languages", silent = true })
 			vim.keymap.set("n", "<localleader>ip", function()
 				local venv = os.getenv("VIRTUAL_ENV")
 				if venv ~= nil then
@@ -67,6 +77,40 @@ return {
 					only_render_image_at_cursor = true,
 					filetypes = { "markdown", "vimwiki", "pandoc" }, -- markdown extensions (ie. quarto) can go here
 				},
+			},
+		},
+	},
+	{
+		"GCBallesteros/jupytext.nvim",
+		lazy = false,
+		opts = { style = "markdown", output_extension = "md", force_ft = "markdown" },
+	},
+	{
+		"quarto-dev/quarto-nvim",
+		opts = {
+			lspFeatures = {
+				-- NOTE: put whatever languages you want here:
+				languages = { "r", "python", "rust" },
+				chunks = "all",
+				diagnostics = {
+					enabled = true,
+					triggers = { "BufWritePost" },
+				},
+				completion = {
+					enabled = true,
+				},
+			},
+			keymap = {
+				-- NOTE: setup your own keymaps:
+				hover = "H",
+				definition = "gd",
+				rename = "<leader>rn",
+				references = "gr",
+				format = "<leader>gf",
+			},
+			codeRunner = {
+				enabled = true,
+				default_method = "molten",
 			},
 		},
 	},

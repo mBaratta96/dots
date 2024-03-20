@@ -20,20 +20,20 @@ map("n", "<leader>c", ":CodeActionMenu<CR>", options)
 local command = vim.api.nvim_create_user_command
 
 command(
-	"ParseFountain",
-	"! afterwriting --source % --pdf --overwrite --config $HOME/.config/nvim/afterwriting-settings.json",
-	{ desc = "Parse fountain file and save it as a pdf." }
+    "ParseFountain",
+    "! afterwriting --source % --pdf --overwrite --config $HOME/.config/nvim/afterwriting-settings.json",
+    { desc = "Parse fountain file and save it as a pdf." }
 )
 command(
-	"ParseFountainTitle",
-	"! afterwriting --source % --pdf --overwrite --config $HOME/.config/nvim/afterwriting-settings.json --setting print_title_page=true",
-	{ desc = "Parse fountain file and save it as a pdf." }
+    "ParseFountainTitle",
+    "! afterwriting --source % --pdf --overwrite --config $HOME/.config/nvim/afterwriting-settings.json --setting print_title_page=true",
+    { desc = "Parse fountain file and save it as a pdf." }
 )
 
 command(
-	"CompressPDF",
-	"! gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=foo-compressed.pdf foo.pdf",
-	{ desc = "Compress PDF" }
+    "CompressPDF",
+    "! gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=foo-compressed.pdf foo.pdf",
+    { desc = "Compress PDF" }
 )
 
 command("SelectAll", "%y+", { desc = "Select all text" })

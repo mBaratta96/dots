@@ -43,14 +43,13 @@ return {
 				return ""
 			end
 		end
-		local wpm = require("wpm")
 		local moonbow = require("confs.lualine_moonbow")
 		return {
 			options = {
 				theme = moonbow,
 			},
 			sections = {
-				lualine_x = { "aerial", getWords, wpm.historic_graph, "filetype" },
+				lualine_x = { getWords, "grapple", "filetype" },
 			},
 		}
 	end,

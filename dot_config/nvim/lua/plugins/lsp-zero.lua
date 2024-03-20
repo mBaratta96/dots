@@ -1,3 +1,10 @@
+function table.merge_functions(t1, t2)
+	for k, v in pairs(t2) do
+		t1[k] = v()
+	end
+	return t1
+end
+
 return {
 	{
 		"VonHeikemen/lsp-zero.nvim",
@@ -31,7 +38,6 @@ return {
 
 			null_ls.setLsp(lsp_zero)
 
-			local lsp_confs = require("confs.lspconfig")
 			--lsp_confs.sign_columns()
 			lsp_zero.on_attach(function(client, bufnr)
 				-- see :help lsp-zero-keybindings
@@ -53,19 +59,14 @@ return {
 					end,
 				})
 			end)
-			vim.keymap.set("n", "<leader>m", ":Mason<CR>", { noremap = true })
+			vim.keymap.set("n", "<leader>M", ":Mason<CR>", { noremap = true })
 			require("mason").setup({})
+			local lsp_server_conifg = require("confs.lspconfig")
+			local handlers = table.merge_functions({ lsp_zero.default_setup }, lsp_server_conifg)
+
 			require("mason-lspconfig").setup({
 				ensure_installed = { "tsserver", "rust_analyzer" },
-				handlers = {
-					lsp_zero.default_setup,
-					lua_ls = lsp_confs.lua_ls,
-					eslint = lsp_confs.eslint,
-					volar = lsp_confs.volar,
-					ltex = lsp_confs.ltex,
-					marksman = lsp_confs.marksman,
-					r_language_server = lsp_confs.r_language_server,
-				},
+				handlers = handlers,
 			})
 		end,
 	},

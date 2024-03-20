@@ -4,6 +4,8 @@ return {
 	opts = {
 		disabled_filetypes = {
 			"qf",
+			"help",
+			"code-action-menu-menu",
 			"netwr",
 			"NvimTree",
 			"lazy",
@@ -12,6 +14,7 @@ return {
 			"JABSwindow",
 			"aerial",
 			"floggraph",
+			"grapple",
 			"fugitive",
 		},
 	},

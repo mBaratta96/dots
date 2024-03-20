@@ -30,7 +30,6 @@ local function setLsp(lsp)
 			}),
 			formatting.google_java_format,
 			formatting.gofumpt,
-			formatting.latexindent,
 			formatting.markdownlint.with({
 				filetypes = { "markdown", "telekasten", "fountain" },
 				args = { "-r", "~MD026" },
@@ -61,17 +60,9 @@ local function setLsp(lsp)
 				},
 			}),
 			formatting.rubocop,
-			formatting.rustfmt,
 			formatting.styler,
 			formatting.stylua,
-			formatting.xmlformat.with({
-				extra_args = { "--blanks", "true", "--compress", "false" },
-			}),
 			formatting.zprint,
-			diagnostics.jsonlint,
-			diagnostics.flake8.with({
-				extra_args = { "--max-line-length", "120", "--extend-ignore", "E203" },
-			}),
 			diagnostics.proselint.with({
 				filetypes = { "markdown", "tex", "telekasten", "fountain" },
 			}),
