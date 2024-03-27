@@ -77,6 +77,8 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "SergioRibera/cmp-dotenv" },
+			{ "luckasRanarison/tailwind-tools.nvim" },
+			{ "onsails/lspkind-nvim" },
 		},
 		config = function()
 			-- SNIPPETS
@@ -99,6 +101,11 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-l>"] = cmp_action.luasnip_jump_forward(),
 					["<C-h>"] = cmp_action.luasnip_jump_backward(),
+					["<C-e>"] = function()
+						if require("luasnip").choice_active() then
+							require("luasnip").change_choice(1)
+						end
+					end,
 					["<C-u>"] = cmp.mapping.scroll_docs(-4),
 					["<C-d>"] = cmp.mapping.scroll_docs(4),
 					["<Tab>"] = cmp_action.luasnip_supertab(),
@@ -109,7 +116,12 @@ return {
 						luasnip.lsp_expand(args.body)
 					end,
 				},
-				formatting = cmp_format,
+				formatting = {
+					fields = { "abbr", "kind", "menu" },
+					format = require("lspkind").cmp_format({
+						before = require("tailwind-tools.cmp").lspkind_format,
+					}),
+				},
 			})
 		end,
 	},
