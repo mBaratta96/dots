@@ -77,7 +77,6 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "SergioRibera/cmp-dotenv" },
-			{ "luckasRanarison/tailwind-tools.nvim" },
 			{ "onsails/lspkind-nvim" },
 		},
 		config = function()
@@ -92,6 +91,10 @@ return {
 			local cmp_format = require("lsp-zero").cmp_format()
 			local luasnip = require("luasnip")
 			cmp.setup({
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
@@ -119,7 +122,14 @@ return {
 				formatting = {
 					fields = { "abbr", "kind", "menu" },
 					format = require("lspkind").cmp_format({
-						before = require("tailwind-tools.cmp").lspkind_format,
+						menu = {
+							buffer = "[Buffer]",
+							nvim_lsp = "[LSP]",
+							luasnip = "[LuaSnip]",
+							nvim_lua = "[Lua]",
+							latex_symbols = "[Latex]",
+						},
+						before = require("tailwindcss-colorizer-cmp").formatter,
 					}),
 				},
 			})

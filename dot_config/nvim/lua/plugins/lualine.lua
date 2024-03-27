@@ -43,10 +43,9 @@ return {
 				return ""
 			end
 		end
-		local moonbow = require("confs.lualine_moonbow")
 		return {
 			options = {
-				theme = moonbow,
+				theme = "moonbow",
 			},
 			sections = {
 				lualine_x = { getWords, "grapple", "filetype" },

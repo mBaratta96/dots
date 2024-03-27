@@ -31,7 +31,6 @@ return {
 			--			require("telescope").load_extension("aerial")
 			require("telescope").load_extension("fzy_native")
 			require("telescope").load_extension("notify")
-			require("telescope").load_extension("rest")
 			local builtin = require("telescope.builtin")
 			local utils = require("telescope.utils")
 			local map = vim.keymap.set
@@ -39,7 +38,6 @@ return {
 			map("n", "<leader>fg", function()
 				builtin.live_grep({ cwd = utils.buffer_dir() })
 			end, options)
-			map("n", "<leader>fb", builtin.buffers, options)
 			map("n", "<leader>fh", builtin.help_tags, options)
 			map("n", "<leader>ft", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", options)
 			map("n", "<leader>fd", function()
