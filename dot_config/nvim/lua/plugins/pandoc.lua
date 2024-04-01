@@ -5,7 +5,7 @@ return {
 	config = function()
 		vim.api.nvim_create_user_command(
 			"PDFPandoc",
-			"set filetype=pandoc | Pandoc pdf --lua-filter /home/marco/.config/nvim/lua/confs/pandoc-filter.lua --variable colorlinks=true",
+			"set filetype=pandoc | exe 'Pandoc pdf --lua-filter /home/marco/.config/nvim/lua/confs/pandoc-filter.lua --variable colorlinks=true' | set filetype=markdown",
 			{ desc = "Parse into pdf" }
 		)
 	end,

@@ -76,7 +76,6 @@ return {
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
-			{ "SergioRibera/cmp-dotenv" },
 			{ "onsails/lspkind-nvim" },
 		},
 		config = function()
@@ -88,7 +87,6 @@ return {
 
 			local cmp = require("cmp")
 			local cmp_action = require("lsp-zero").cmp_action()
-			local cmp_format = require("lsp-zero").cmp_format()
 			local luasnip = require("luasnip")
 			cmp.setup({
 				window = {
@@ -98,7 +96,6 @@ return {
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
-					{ name = "dotenv" },
 				},
 				mapping = {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),

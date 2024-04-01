@@ -26,6 +26,6 @@ return {
 		"lukas-reineke/headlines.nvim",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		opts = {},
-		ft = { "markdown", "pandoc", "telekasten" },
+		ft = { "markdown", "telekasten" },
 	},
 }
