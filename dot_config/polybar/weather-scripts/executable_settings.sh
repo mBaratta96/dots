@@ -6,7 +6,7 @@
 
 APIKEY=`cat $HOME/.owm-key`
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME='Rome'
+CITY_NAME='Sanremo'
 COUNTRY_CODE='IT'
 # Desired output language
 LANG="en"

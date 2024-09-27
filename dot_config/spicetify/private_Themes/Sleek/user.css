@@ -179,7 +179,7 @@ NAVBAR
 PLAYBACK BAR
 ---------------
 */
-/* progress bar moves smoothly */
+/* playback progress bar moves smoothly */
 .x-progressBar-fillColor {
   transition: transform 1s linear;
 }
@@ -188,8 +188,7 @@ PLAYBACK BAR
   transition: left 1s linear;
 }
 
-.playback-progressbar-isInteractive .DuvrswZugGajIFNXObAr .x-progressBar-fillColor,
-.playback-progressbar-isInteractive .DuvrswZugGajIFNXObAr .progress-bar__slider {
+.progress-bar--isDragging .x-progressBar-fillColor, .progress-bar--isDragging .progress-bar__slider {
   transition: none;
 }
 
@@ -438,19 +437,31 @@ input {
   z-index: 3;
 }
 
-/* topbar play button */
-.main-topBar-topbarContent .main-playButton-PlayButton > button > span {
-  inline-size: 32px;
-  block-size: 32px;
+/* play button */
+.main-home-home .main-playButton-PlayButton > button > span {
+  inline-size: 42px;
+  block-size: 42px;
   min-block-size: auto;
 }
-.main-topBar-topbarContent .main-playButton-PlayButton svg {
-  width: 18px;
-  height: 18px;
+
+.main-home-home .main-playButton-PlayButton svg {
+  width: 24px;
+  height: 24px;
 }
-.main-topBar-topbarContent .main-playButton-PlayButton > button > span > span {
+
+.main-home-home .main-playButton-PlayButton > button > span > span {
   position: initial;
-  height: 18px;
+  height: 24px;
+}
+
+.main-actionBar-ActionBar .main-playButton-PlayButton svg {
+  width: 30px;
+  height: 30px;
+}
+
+.main-actionBar-ActionBar .main-playButton-PlayButton > button > span > span {
+  position: initial;
+  height: 30px;
 }
 
 /* change text color on category cards in 'search' tab */
@@ -674,4 +685,41 @@ NEW HOME LAYOUT
 }
 .nav-alt .x-searchInput-searchInputInput:focus {
   box-shadow: none;
+}
+/* 
+-------
+TOGGLE 
+-------
+*/
+.x-toggle-indicatorWrapper {
+  background-color: transparent;
+  height: 20px !important;
+  width: 40px !important;
+  box-shadow: 0 0 0 1px var(--spice-subtext);
+}
+
+input:hover:not([disabled], :active) ~ .x-toggle-indicatorWrapper {
+  background-color: var(--spice-main-secondary);
+}
+
+input:checked ~ .x-toggle-indicatorWrapper {
+  background-color: var(--spice-button);
+  box-shadow: none;
+}
+
+.x-toggle-indicator {
+  background-color: var(--spice-subtext);
+  height: 12px;
+  width: 12px;
+  top: 4px;
+  left: 3px;
+}
+
+input:not([disabled]) ~ .x-toggle-indicatorWrapper:hover .x-toggle-indicator {
+  transform: scale(1.2);
+}
+
+input:checked ~ .x-toggle-indicatorWrapper .x-toggle-indicator {
+  background-color: var(--spice-main);
+  right: 4px;
 }
