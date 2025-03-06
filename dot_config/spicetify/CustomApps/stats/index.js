@@ -6502,9 +6502,13 @@ var stats = (() => {
   var getTopArtists3 = async (timeRange, config) => {
     if (config["use-lastfm"]) {
       const { "lastfm-user": user, "api-key": key } = config;
-      if (!user || !key)
-        throw new Error("Missing LastFM API Key or Username");
+      if (!user || !key){
+
+      const response2 = await getTopArtists2("baratz96", "c27d65609d49f421e30c8e16d6f39778", timeRange);
+            } else {
+        // throw new Error("Missing LastFM API Key or Username");
       const response2 = await getTopArtists2(key, user, timeRange);
+            }
       return Promise.all(response2.map(convertArtist));
     }
     const response = await getTopArtists(timeRange);

@@ -1,0 +1,8 @@
+[12:04:39 2024-11-23] FETCHING Version 2.38.4
+[12:04:39 2024-11-23] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.38.4/spicetify-2.38.4-linux-amd64.tar.gz
+[12:04:41 2024-11-23] EXTRACTING /home/marco/.spicetify/spicetify.tar.gz
+[12:04:41 2024-11-23] SETTING EXECUTABLE PERMISSIONS TO /home/marco/.spicetify/spicetify
+[12:04:41 2024-11-23] REMOVING /home/marco/.spicetify/spicetify.tar.gz
+[12:04:41 2024-11-23] spicetify path already set in /home/marco/.bashrc, continuing...
+[12:04:41 2024-11-23] spicetify v2.38.4 was installed successfully to /home/marco/.spicetify
+[12:04:41 2024-11-23] Run 'spicetify --help' to get started
